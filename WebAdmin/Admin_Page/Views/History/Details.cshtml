@@ -1,0 +1,99 @@
+﻿@model Admin_Page.CheckFace
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CheckFace</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StoreId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoreId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsUpdated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsUpdated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="data:image/png;base64,@Html.DisplayFor(model => model.Image)" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IpWifi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IpWifi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GPS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GPS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaceScanMachine.MachineCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaceScanMachine.MachineCode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,2175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AEW_DEVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AttendanceDate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreId" Type="int" Nullable="false" />
+          <Property Name="DateReport" Type="datetime" Nullable="false" />
+          <Property Name="TotalEmployee" Type="int" Nullable="false" />
+          <Property Name="TotalOnTimeEmployee" Type="int" Nullable="false" />
+          <Property Name="TotalSession" Type="int" Nullable="false" />
+          <Property Name="TotalOnTimeSession" Type="int" Nullable="false" />
+          <Property Name="TotalMissSession" Type="int" Nullable="false" />
+          <Property Name="TotalMissEmployee" Type="int" Nullable="false" />
+          <Property Name="TotalComeLate" Type="int" Nullable="false" />
+          <Property Name="TotalComeOnTime" Type="int" Nullable="false" />
+          <Property Name="TotalReturnEarly" Type="int" Nullable="false" />
+          <Property Name="TotalReturnOntime" Type="int" Nullable="false" />
+          <Property Name="TotalWorkingTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="255" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="255" />
+          <Property Name="Website" Type="nvarchar" MaxLength="255" />
+          <Property Name="VATCode" Type="nvarchar" MaxLength="13" />
+          <Property Name="VATTemplate" Type="int" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="ApiSMSKey" Type="nvarchar" MaxLength="255" />
+          <Property Name="SecurityApiSMSKey" Type="nvarchar" MaxLength="255" />
+          <Property Name="SMSType" Type="int" />
+          <Property Name="BrandNameSMS" Type="nvarchar" MaxLength="255" />
+          <Property Name="JsonConfigUrl" Type="nvarchar(max)" />
+          <Property Name="BrandFeatureFilter" Type="nvarchar" MaxLength="255" />
+          <Property Name="WiskyId" Type="int" />
+          <Property Name="DefaultDashBoard" Type="nvarchar" MaxLength="250" />
+          <Property Name="RSAPrivateKey" Type="nvarchar(max)" />
+          <Property Name="RSAPublicKey" Type="nvarchar(max)" />
+          <Property Name="PGPPassword" Type="nvarchar(max)" />
+          <Property Name="PGPPrivateKey" Type="nvarchar(max)" />
+          <Property Name="PGPPulblicKey" Type="nvarchar(max)" />
+          <Property Name="DesKey" Type="nvarchar(max)" />
+          <Property Name="DesVector" Type="nvarchar(max)" />
+          <Property Name="AccessToken" Type="nvarchar(max)" />
+          <Property Name="TaxCode" Type="nvarchar(max)" />
+          <Property Name="DefaultDomain" Type="nvarchar" MaxLength="255" />
+          <Property Name="DefaultImage" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CheckFace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FaceScanMachineId" Type="int" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Mode" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="StoreId" Type="int" />
+          <Property Name="IsUpdated" Type="bit" />
+          <Property Name="Image" Type="varchar(max)" />
+          <Property Name="IpWifi" Type="varchar(max)" />
+          <Property Name="GPS" Type="varchar(max)" />
+          <Property Name="WorkShiftId" Type="int" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="Statuts" Type="int" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Role" Type="int" />
+          <Property Name="EmpEnrollNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MainStoreId" Type="int" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="BrandId" Type="int" Nullable="false" />
+          <Property Name="Salary" Type="money" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="DateStartWork" Type="datetime" />
+          <Property Name="EmployeeGroupId" Type="int" />
+          <Property Name="EmployeeCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmployeeRegency" Type="nvarchar" MaxLength="255" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="EmployeeSex" Type="int" />
+          <Property Name="PersonalCardId" Type="nvarchar" MaxLength="255" />
+          <Property Name="DatePersonalCard" Type="date" />
+          <Property Name="PlaceOfPersonalCard" Type="nvarchar" MaxLength="255" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="MainAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmployeeHometown" Type="nvarchar" MaxLength="1000" />
+          <Property Name="EmployeePlaceBorn" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DateQuitWork" Type="datetime" />
+          <Property Name="ReasonQuit" Type="nvarchar(max)" />
+          <Property Name="PersonalIncomTax" Type="nvarchar" MaxLength="255" />
+          <Property Name="MaritalStatus" Type="int" />
+          <Property Name="SocialInsuranceNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="BankNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="Bank" Type="int" />
+          <Property Name="EducationType" Type="int" />
+          <Property Name="EducationStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="EducationQualify" Type="int" />
+          <Property Name="Specialized" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SchoolName" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CourseYear" Type="nvarchar" MaxLength="1000" />
+          <Property Name="FormOfTraining" Type="int" />
+          <Property Name="ContactOne" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ContactTwo" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Image" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="EmployeeFace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpId" Type="int" />
+          <Property Name="EmpEnrollNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FaceIndex" Type="int" Nullable="false" />
+          <Property Name="FaceData" Type="nvarchar(max)" />
+          <Property Name="Type" Type="int" />
+          <Property Name="NameEmployeeInMachine" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodeGroup" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NameGroup" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="BrandId" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="ExpandTime" Type="time" Precision="7" />
+          <Property Name="GroupPolicy" Type="int" />
+          <Property Name="GroupSecurity" Type="int" />
+        </EntityType>
+        <EntityType Name="EmployeeInStore">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="StoreId" Type="int" Nullable="false" />
+          <Property Name="AssignedDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Lever" Type="int" />
+        </EntityType>
+        <EntityType Name="EmployeeRoleList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="EmpRoleId" Type="int" Nullable="false" />
+          <Property Name="BeginDay" Type="datetime" />
+          <Property Name="FinishDay" Type="datetime" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FaceScanMachine">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MachineCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StoreId" Type="int" Nullable="false" />
+          <Property Name="Url" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandOfMachine" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOfManufacture" Type="datetime" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notifications">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="Opening" Type="nvarchar(max)" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="CheckFaceId" Type="int" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Lat" Type="nvarchar" MaxLength="256" />
+          <Property Name="Lon" Type="nvarchar" MaxLength="50" />
+          <Property Name="isAvailable" Type="bit" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="RoomRentMode" Type="int" />
+          <Property Name="ReportDate" Type="datetime" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="100" />
+          <Property Name="GroupId" Type="int" />
+          <Property Name="OpenTime" Type="datetime" />
+          <Property Name="CloseTime" Type="datetime" />
+          <Property Name="DefaultAdminPassword" Type="nvarchar" MaxLength="20" />
+          <Property Name="HasProducts" Type="bit" />
+          <Property Name="HasNews" Type="bit" />
+          <Property Name="HasImageCollections" Type="bit" />
+          <Property Name="HasMultipleLanguage" Type="bit" />
+          <Property Name="HasWebPages" Type="bit" />
+          <Property Name="HasCustomerFeedbacks" Type="bit" />
+          <Property Name="BrandId" Type="int" />
+          <Property Name="HasOrder" Type="bit" />
+          <Property Name="HasBlogEditCollections" Type="bit" />
+          <Property Name="LogoUrl" Type="nvarchar(max)" />
+          <Property Name="FbAccessToken" Type="nvarchar(max)" />
+          <Property Name="StoreFeatureFilter" Type="nvarchar" MaxLength="255" />
+          <Property Name="RunReport" Type="bit" />
+          <Property Name="AttendanceStoreFilter" Type="int" />
+          <Property Name="StoreCode" Type="nchar" MaxLength="10" />
+          <Property Name="PosId" Type="int" />
+          <Property Name="StoreConfig" Type="ntext" />
+          <Property Name="DefaultDashBoard" Type="nvarchar" MaxLength="250" />
+          <Property Name="District" Type="nvarchar" MaxLength="250" />
+          <Property Name="Province" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="PaymentTypeApply" Type="int" />
+        </EntityType>
+        <EntityType Name="StoreGroup">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StoreGroupMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreGroupID" Type="int" Nullable="false" />
+          <Property Name="StoreID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TokenUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="256" />
+          <Property Name="FcmToken" Type="nvarchar(max)" />
+          <Property Name="Uid" Type="nvarchar(max)" />
+          <Property Name="EmpId" Type="int" />
+          <Property Name="JwtToken" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="EndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="WorkingShift">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CheckMin" Type="datetime" />
+          <Property Name="CheckMax" Type="datetime" />
+          <Property Name="TotalWorkTime" Type="time" Precision="7" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="ShiftStart" Type="datetime" Nullable="false" />
+          <Property Name="ShiftEnd" Type="datetime" Nullable="false" />
+          <Property Name="CheckInTime" Type="time" Precision="7" />
+          <Property Name="ModeAttendance" Type="int" />
+          <Property Name="UpdatePerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProcessingStatus" Type="int" />
+          <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="StoreId" Type="int" Nullable="false" />
+          <Property Name="TimeFramId" Type="int" Nullable="false" />
+          <Property Name="BreakTime" Type="time" Precision="7" />
+          <Property Name="RequestedCheckOut" Type="datetime" />
+          <Property Name="RequestedCheckIn" Type="datetime" />
+          <Property Name="IsRequested" Type="int" />
+          <Property Name="ApprovePerson" Type="nvarchar" MaxLength="255" />
+          <Property Name="NoteRequest" Type="nvarchar(max)" />
+          <Property Name="LastCheckBeforeShift" Type="datetime" />
+          <Property Name="FirstCheckAfterShift" Type="datetime" />
+          <Property Name="IsOverTime" Type="bit" />
+          <Property Name="InMode" Type="int" />
+          <Property Name="OutMode" Type="int" />
+          <Property Name="BreakCount" Type="int" />
+          <Property Name="CheckInExpandTime" Type="time" Precision="7" />
+          <Property Name="CheckOutExpandTime" Type="time" Precision="7" />
+          <Property Name="ComeLateExpandTime" Type="time" Precision="7" />
+          <Property Name="LeaveEarlyExpandTime" Type="time" Precision="7" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AEW_DEV.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AttendanceDate_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="AttendanceDate" Type="Self.AttendanceDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AttendanceDate">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CheckFace_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="CheckFace" Type="Self.CheckFace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CheckFace">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CheckFace_FaceScanMachine">
+          <End Role="FaceScanMachine" Type="Self.FaceScanMachine" Multiplicity="0..1" />
+          <End Role="CheckFace" Type="Self.CheckFace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FaceScanMachine">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CheckFace">
+              <PropertyRef Name="FaceScanMachineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CheckFace_WorkingShift">
+          <End Role="WorkingShift" Type="Self.WorkingShift" Multiplicity="0..1" />
+          <End Role="CheckFace" Type="Self.CheckFace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkingShift">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CheckFace">
+              <PropertyRef Name="WorkShiftId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_EmployeeGroup">
+          <End Role="EmployeeGroup" Type="Self.EmployeeGroup" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="EmployeeGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeFace_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="EmployeeFace" Type="Self.EmployeeFace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeFace">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeInStore_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="EmployeeInStore" Type="Self.EmployeeInStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeInStore">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeInStore_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="EmployeeInStore" Type="Self.EmployeeInStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EmployeeInStore">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeRoleList_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="EmployeeRoleList" Type="Self.EmployeeRoleList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeRoleList">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeRoleList_EmployeeRole">
+          <End Role="EmployeeRole" Type="Self.EmployeeRole" Multiplicity="1" />
+          <End Role="EmployeeRoleList" Type="Self.EmployeeRoleList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeRoleList">
+              <PropertyRef Name="EmpRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FaceScanMachine_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="FaceScanMachine" Type="Self.FaceScanMachine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FaceScanMachine">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notifications_CheckFace">
+          <End Role="CheckFace" Type="Self.CheckFace" Multiplicity="0..1" />
+          <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CheckFace">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="CheckFaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Brand">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="BrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreGroup_Brand">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+          <End Role="StoreGroup" Type="Self.StoreGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StoreGroup">
+              <PropertyRef Name="BrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreGroupMapping_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="StoreGroupMapping" Type="Self.StoreGroupMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StoreGroupMapping">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreGroupMapping_StoreGroup">
+          <End Role="StoreGroup" Type="Self.StoreGroup" Multiplicity="1" />
+          <End Role="StoreGroupMapping" Type="Self.StoreGroupMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreGroup">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="StoreGroupMapping">
+              <PropertyRef Name="StoreGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TokenUser_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="TokenUser" Type="Self.TokenUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TokenUser">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkingShift_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="WorkingShift" Type="Self.WorkingShift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WorkingShift">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkingShift_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="WorkingShift" Type="Self.WorkingShift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WorkingShift">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="AEW_DEVModelStoreContainer">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AttendanceDate" EntityType="Self.AttendanceDate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CheckFace" EntityType="Self.CheckFace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeFace" EntityType="Self.EmployeeFace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeGroup" EntityType="Self.EmployeeGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeInStore" EntityType="Self.EmployeeInStore" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeRole" EntityType="Self.EmployeeRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeRoleList" EntityType="Self.EmployeeRoleList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FaceScanMachine" EntityType="Self.FaceScanMachine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StoreGroup" EntityType="Self.StoreGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StoreGroupMapping" EntityType="Self.StoreGroupMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TokenUser" EntityType="Self.TokenUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkingShift" EntityType="Self.WorkingShift" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AttendanceDate_Store" Association="Self.FK_AttendanceDate_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="AttendanceDate" EntitySet="AttendanceDate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CheckFace_Employee" Association="Self.FK_CheckFace_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="CheckFace" EntitySet="CheckFace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CheckFace_FaceScanMachine" Association="Self.FK_CheckFace_FaceScanMachine">
+            <End Role="FaceScanMachine" EntitySet="FaceScanMachine" />
+            <End Role="CheckFace" EntitySet="CheckFace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CheckFace_WorkingShift" Association="Self.FK_CheckFace_WorkingShift">
+            <End Role="WorkingShift" EntitySet="WorkingShift" />
+            <End Role="CheckFace" EntitySet="CheckFace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_EmployeeGroup" Association="Self.FK_Employee_EmployeeGroup">
+            <End Role="EmployeeGroup" EntitySet="EmployeeGroup" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeFace_Employee" Association="Self.FK_EmployeeFace_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="EmployeeFace" EntitySet="EmployeeFace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeInStore_Employee" Association="Self.FK_EmployeeInStore_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="EmployeeInStore" EntitySet="EmployeeInStore" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeInStore_Store" Association="Self.FK_EmployeeInStore_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="EmployeeInStore" EntitySet="EmployeeInStore" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeRoleList_Employee" Association="Self.FK_EmployeeRoleList_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="EmployeeRoleList" EntitySet="EmployeeRoleList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeRoleList_EmployeeRole" Association="Self.FK_EmployeeRoleList_EmployeeRole">
+            <End Role="EmployeeRole" EntitySet="EmployeeRole" />
+            <End Role="EmployeeRoleList" EntitySet="EmployeeRoleList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FaceScanMachine_Store" Association="Self.FK_FaceScanMachine_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="FaceScanMachine" EntitySet="FaceScanMachine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notifications_CheckFace" Association="Self.FK_Notifications_CheckFace">
+            <End Role="CheckFace" EntitySet="CheckFace" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Brand" Association="Self.FK_Store_Brand">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreGroup_Brand" Association="Self.FK_StoreGroup_Brand">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="StoreGroup" EntitySet="StoreGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreGroupMapping_Store" Association="Self.FK_StoreGroupMapping_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="StoreGroupMapping" EntitySet="StoreGroupMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreGroupMapping_StoreGroup" Association="Self.FK_StoreGroupMapping_StoreGroup">
+            <End Role="StoreGroup" EntitySet="StoreGroup" />
+            <End Role="StoreGroupMapping" EntitySet="StoreGroupMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TokenUser_Employee" Association="Self.FK_TokenUser_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="TokenUser" EntitySet="TokenUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkingShift_Employee" Association="Self.FK_WorkingShift_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="WorkingShift" EntitySet="WorkingShift" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkingShift_Store" Association="Self.FK_WorkingShift_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="WorkingShift" EntitySet="WorkingShift" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AEW_DEVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="AttendanceDate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+          <Property Name="DateReport" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TotalEmployee" Type="Int32" Nullable="false" />
+          <Property Name="TotalOnTimeEmployee" Type="Int32" Nullable="false" />
+          <Property Name="TotalSession" Type="Int32" Nullable="false" />
+          <Property Name="TotalOnTimeSession" Type="Int32" Nullable="false" />
+          <Property Name="TotalMissSession" Type="Int32" Nullable="false" />
+          <Property Name="TotalMissEmployee" Type="Int32" Nullable="false" />
+          <Property Name="TotalComeLate" Type="Int32" Nullable="false" />
+          <Property Name="TotalComeOnTime" Type="Int32" Nullable="false" />
+          <Property Name="TotalReturnEarly" Type="Int32" Nullable="false" />
+          <Property Name="TotalReturnOntime" Type="Int32" Nullable="false" />
+          <Property Name="TotalWorkingTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_AttendanceDate_Store" FromRole="AttendanceDate" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BrandName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPerson" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="VATCode" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="VATTemplate" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ApiSMSKey" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityApiSMSKey" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SMSType" Type="Int32" />
+          <Property Name="BrandNameSMS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="JsonConfigUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BrandFeatureFilter" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="WiskyId" Type="Int32" />
+          <Property Name="DefaultDashBoard" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RSAPrivateKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RSAPublicKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PGPPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PGPPrivateKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PGPPulblicKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DesKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DesVector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AccessToken" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TaxCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DefaultDomain" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DefaultImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Stores" Relationship="Self.FK_Store_Brand" FromRole="Brand" ToRole="Store" />
+          <NavigationProperty Name="StoreGroups" Relationship="Self.FK_StoreGroup_Brand" FromRole="Brand" ToRole="StoreGroup" />
+        </EntityType>
+        <EntityType Name="CheckFace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FaceScanMachineId" Type="Int32" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Mode" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="StoreId" Type="Int32" />
+          <Property Name="IsUpdated" Type="Boolean" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IpWifi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GPS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_CheckFace_Employee" FromRole="CheckFace" ToRole="Employee" />
+          <NavigationProperty Name="FaceScanMachine" Relationship="Self.FK_CheckFace_FaceScanMachine" FromRole="CheckFace" ToRole="FaceScanMachine" />
+          <NavigationProperty Name="Notifications" Relationship="Self.FK_Notifications_CheckFace" FromRole="CheckFace" ToRole="Notifications" />
+          <Property Name="WorkShiftId" Type="Int32" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Statuts" Type="Int32" />
+          <NavigationProperty Name="WorkingShift" Relationship="AEW_DEVModel.FK_CheckFace_WorkingShift" FromRole="CheckFace" ToRole="WorkingShift" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Role" Type="Int32" />
+          <Property Name="EmpEnrollNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MainStoreId" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="BrandId" Type="Int32" Nullable="false" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="DateStartWork" Type="DateTime" Precision="3" />
+          <Property Name="EmployeeGroupId" Type="Int32" />
+          <Property Name="EmployeeCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeRegency" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="EmployeeSex" Type="Int32" />
+          <Property Name="PersonalCardId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DatePersonalCard" Type="DateTime" Precision="0" />
+          <Property Name="PlaceOfPersonalCard" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MainAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeHometown" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeePlaceBorn" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="DateQuitWork" Type="DateTime" Precision="3" />
+          <Property Name="ReasonQuit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonalIncomTax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MaritalStatus" Type="Int32" />
+          <Property Name="SocialInsuranceNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BankNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Bank" Type="Int32" />
+          <Property Name="EducationType" Type="Int32" />
+          <Property Name="EducationStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EducationQualify" Type="Int32" />
+          <Property Name="Specialized" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="SchoolName" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="CourseYear" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="FormOfTraining" Type="Int32" />
+          <Property Name="ContactOne" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ContactTwo" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CheckFaces" Relationship="Self.FK_CheckFace_Employee" FromRole="Employee" ToRole="CheckFace" />
+          <NavigationProperty Name="EmployeeGroup" Relationship="Self.FK_Employee_EmployeeGroup" FromRole="Employee" ToRole="EmployeeGroup" />
+          <NavigationProperty Name="EmployeeFaces" Relationship="Self.FK_EmployeeFace_Employee" FromRole="Employee" ToRole="EmployeeFace" />
+          <NavigationProperty Name="EmployeeInStores" Relationship="Self.FK_EmployeeInStore_Employee" FromRole="Employee" ToRole="EmployeeInStore" />
+          <NavigationProperty Name="EmployeeRoleLists" Relationship="Self.FK_EmployeeRoleList_Employee" FromRole="Employee" ToRole="EmployeeRoleList" />
+          <NavigationProperty Name="TokenUsers" Relationship="Self.FK_TokenUser_Employee" FromRole="Employee" ToRole="TokenUser" />
+          <NavigationProperty Name="WorkingShifts" Relationship="Self.FK_WorkingShift_Employee" FromRole="Employee" ToRole="WorkingShift" />
+        </EntityType>
+        <EntityType Name="EmployeeFace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpId" Type="Int32" />
+          <Property Name="EmpEnrollNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FaceIndex" Type="Int32" Nullable="false" />
+          <Property Name="FaceData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="NameEmployeeInMachine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeeFace_Employee" FromRole="EmployeeFace" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="EmployeeGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodeGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NameGroup" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BrandId" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="ExpandTime" Type="Time" Precision="7" />
+          <Property Name="GroupPolicy" Type="Int32" />
+          <Property Name="GroupSecurity" Type="Int32" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employee_EmployeeGroup" FromRole="EmployeeGroup" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="EmployeeInStore">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+          <Property Name="AssignedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeeInStore_Employee" FromRole="EmployeeInStore" ToRole="Employee" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_EmployeeInStore_Store" FromRole="EmployeeInStore" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="EmployeeRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Lever" Type="Int32" />
+          <NavigationProperty Name="EmployeeRoleLists" Relationship="Self.FK_EmployeeRoleList_EmployeeRole" FromRole="EmployeeRole" ToRole="EmployeeRoleList" />
+        </EntityType>
+        <EntityType Name="EmployeeRoleList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="EmpRoleId" Type="Int32" Nullable="false" />
+          <Property Name="BeginDay" Type="DateTime" Precision="3" />
+          <Property Name="FinishDay" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeeRoleList_Employee" FromRole="EmployeeRoleList" ToRole="Employee" />
+          <NavigationProperty Name="EmployeeRole" Relationship="Self.FK_EmployeeRoleList_EmployeeRole" FromRole="EmployeeRoleList" ToRole="EmployeeRole" />
+        </EntityType>
+        <EntityType Name="FaceScanMachine">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MachineCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+          <Property Name="Url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandOfMachine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfManufacture" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CheckFaces" Relationship="Self.FK_CheckFace_FaceScanMachine" FromRole="FaceScanMachine" ToRole="CheckFace" />
+          <NavigationProperty Name="Store" Relationship="AEW_DEVModel.FK_FaceScanMachine_Store" FromRole="FaceScanMachine" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="Opening" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="CheckFaceId" Type="Int32" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CheckFace" Relationship="Self.FK_Notifications_CheckFace" FromRole="Notifications" ToRole="CheckFace" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Lat" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Lon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isAvailable" Type="Boolean" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="RoomRentMode" Type="Int32" />
+          <Property Name="ReportDate" Type="DateTime" Precision="3" />
+          <Property Name="ShortName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GroupId" Type="Int32" />
+          <Property Name="OpenTime" Type="DateTime" Precision="3" />
+          <Property Name="CloseTime" Type="DateTime" Precision="3" />
+          <Property Name="DefaultAdminPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="HasProducts" Type="Boolean" />
+          <Property Name="HasNews" Type="Boolean" />
+          <Property Name="HasImageCollections" Type="Boolean" />
+          <Property Name="HasMultipleLanguage" Type="Boolean" />
+          <Property Name="HasWebPages" Type="Boolean" />
+          <Property Name="HasCustomerFeedbacks" Type="Boolean" />
+          <Property Name="BrandId" Type="Int32" />
+          <Property Name="HasOrder" Type="Boolean" />
+          <Property Name="HasBlogEditCollections" Type="Boolean" />
+          <Property Name="LogoUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FbAccessToken" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StoreFeatureFilter" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RunReport" Type="Boolean" />
+          <Property Name="AttendanceStoreFilter" Type="Int32" />
+          <Property Name="StoreCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PosId" Type="Int32" />
+          <Property Name="StoreConfig" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DefaultDashBoard" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="PaymentTypeApply" Type="Int32" />
+          <NavigationProperty Name="AttendanceDates" Relationship="Self.FK_AttendanceDate_Store" FromRole="Store" ToRole="AttendanceDate" />
+          <NavigationProperty Name="Brand" Relationship="Self.FK_Store_Brand" FromRole="Store" ToRole="Brand" />
+          <NavigationProperty Name="EmployeeInStores" Relationship="Self.FK_EmployeeInStore_Store" FromRole="Store" ToRole="EmployeeInStore" />
+          <NavigationProperty Name="StoreGroupMappings" Relationship="Self.FK_StoreGroupMapping_Store" FromRole="Store" ToRole="StoreGroupMapping" />
+          <NavigationProperty Name="WorkingShifts" Relationship="Self.FK_WorkingShift_Store" FromRole="Store" ToRole="WorkingShift" />
+          <NavigationProperty Name="FaceScanMachines" Relationship="AEW_DEVModel.FK_FaceScanMachine_Store" FromRole="Store" ToRole="FaceScanMachine" />
+        </EntityType>
+        <EntityType Name="StoreGroup">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Brand" Relationship="Self.FK_StoreGroup_Brand" FromRole="StoreGroup" ToRole="Brand" />
+          <NavigationProperty Name="StoreGroupMappings" Relationship="Self.FK_StoreGroupMapping_StoreGroup" FromRole="StoreGroup" ToRole="StoreGroupMapping" />
+        </EntityType>
+        <EntityType Name="StoreGroupMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreGroupID" Type="Int32" Nullable="false" />
+          <Property Name="StoreID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_StoreGroupMapping_Store" FromRole="StoreGroupMapping" ToRole="Store" />
+          <NavigationProperty Name="StoreGroup" Relationship="Self.FK_StoreGroupMapping_StoreGroup" FromRole="StoreGroupMapping" ToRole="StoreGroup" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TokenUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FcmToken" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Uid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmpId" Type="Int32" />
+          <Property Name="JwtToken" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_TokenUser_Employee" FromRole="TokenUser" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="WorkingShift">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CheckMin" Type="DateTime" Precision="3" />
+          <Property Name="CheckMax" Type="DateTime" Precision="3" />
+          <Property Name="TotalWorkTime" Type="Time" Precision="7" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="ShiftStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ShiftEnd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CheckInTime" Type="Time" Precision="7" />
+          <Property Name="UpdatePerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessingStatus" Type="Int32" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+          <Property Name="TimeFramId" Type="Int32" Nullable="false" />
+          <Property Name="BreakTime" Type="Time" Precision="7" />
+          <Property Name="RequestedCheckOut" Type="DateTime" Precision="3" />
+          <Property Name="RequestedCheckIn" Type="DateTime" Precision="3" />
+          <Property Name="IsRequested" Type="Int32" />
+          <Property Name="ApprovePerson" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoteRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastCheckBeforeShift" Type="DateTime" Precision="3" />
+          <Property Name="FirstCheckAfterShift" Type="DateTime" Precision="3" />
+          <Property Name="IsOverTime" Type="Boolean" />
+          <Property Name="InMode" Type="Int32" />
+          <Property Name="OutMode" Type="Int32" />
+          <Property Name="BreakCount" Type="Int32" />
+          <Property Name="CheckInExpandTime" Type="Time" Precision="7" />
+          <Property Name="CheckOutExpandTime" Type="Time" Precision="7" />
+          <Property Name="ComeLateExpandTime" Type="Time" Precision="7" />
+          <Property Name="LeaveEarlyExpandTime" Type="Time" Precision="7" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_WorkingShift_Employee" FromRole="WorkingShift" ToRole="Employee" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_WorkingShift_Store" FromRole="WorkingShift" ToRole="Store" />
+          <Property Name="ModeAttendance" Type="Int32" />
+          <NavigationProperty Name="CheckFaces" Relationship="AEW_DEVModel.FK_CheckFace_WorkingShift" FromRole="WorkingShift" ToRole="CheckFace" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AttendanceDate_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="AttendanceDate" Type="Self.AttendanceDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AttendanceDate">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store_Brand">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Store">
+              <PropertyRef Name="BrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreGroup_Brand">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+          <End Role="StoreGroup" Type="Self.StoreGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StoreGroup">
+              <PropertyRef Name="BrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CheckFace_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="CheckFace" Type="Self.CheckFace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CheckFace">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CheckFace_FaceScanMachine">
+          <End Role="FaceScanMachine" Type="Self.FaceScanMachine" Multiplicity="0..1" />
+          <End Role="CheckFace" Type="Self.CheckFace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FaceScanMachine">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CheckFace">
+              <PropertyRef Name="FaceScanMachineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notifications_CheckFace">
+          <End Role="CheckFace" Type="Self.CheckFace" Multiplicity="0..1" />
+          <End Role="Notifications" Type="Self.Notification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CheckFace">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="CheckFaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_EmployeeGroup">
+          <End Role="EmployeeGroup" Type="Self.EmployeeGroup" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="EmployeeGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeFace_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="EmployeeFace" Type="Self.EmployeeFace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeFace">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeInStore_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="EmployeeInStore" Type="Self.EmployeeInStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeInStore">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeRoleList_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="EmployeeRoleList" Type="Self.EmployeeRoleList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeRoleList">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TokenUser_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="TokenUser" Type="Self.TokenUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TokenUser">
+              <PropertyRef Name="EmpId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkingShift_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="WorkingShift" Type="Self.WorkingShift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WorkingShift">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeInStore_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="EmployeeInStore" Type="Self.EmployeeInStore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EmployeeInStore">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeRoleList_EmployeeRole">
+          <End Role="EmployeeRole" Type="Self.EmployeeRole" Multiplicity="1" />
+          <End Role="EmployeeRoleList" Type="Self.EmployeeRoleList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeRoleList">
+              <PropertyRef Name="EmpRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreGroupMapping_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="StoreGroupMapping" Type="Self.StoreGroupMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StoreGroupMapping">
+              <PropertyRef Name="StoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkingShift_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="WorkingShift" Type="Self.WorkingShift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WorkingShift">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StoreGroupMapping_StoreGroup">
+          <End Role="StoreGroup" Type="Self.StoreGroup" Multiplicity="1" />
+          <End Role="StoreGroupMapping" Type="Self.StoreGroupMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreGroup">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="StoreGroupMapping">
+              <PropertyRef Name="StoreGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="AEW_DEVEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <EntitySet Name="AttendanceDates" EntityType="Self.AttendanceDate" />
+          <EntitySet Name="Brands" EntityType="Self.Brand" />
+          <EntitySet Name="CheckFaces" EntityType="Self.CheckFace" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="EmployeeFaces" EntityType="Self.EmployeeFace" />
+          <EntitySet Name="EmployeeGroups" EntityType="Self.EmployeeGroup" />
+          <EntitySet Name="EmployeeInStores" EntityType="Self.EmployeeInStore" />
+          <EntitySet Name="EmployeeRoles" EntityType="Self.EmployeeRole" />
+          <EntitySet Name="EmployeeRoleLists" EntityType="Self.EmployeeRoleList" />
+          <EntitySet Name="FaceScanMachines" EntityType="Self.FaceScanMachine" />
+          <EntitySet Name="Notifications" EntityType="Self.Notification" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <EntitySet Name="StoreGroups" EntityType="Self.StoreGroup" />
+          <EntitySet Name="StoreGroupMappings" EntityType="Self.StoreGroupMapping" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TokenUsers" EntityType="Self.TokenUser" />
+          <EntitySet Name="WorkingShifts" EntityType="Self.WorkingShift" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AttendanceDate_Store" Association="Self.FK_AttendanceDate_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="AttendanceDate" EntitySet="AttendanceDates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store_Brand" Association="Self.FK_Store_Brand">
+            <End Role="Brand" EntitySet="Brands" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreGroup_Brand" Association="Self.FK_StoreGroup_Brand">
+            <End Role="Brand" EntitySet="Brands" />
+            <End Role="StoreGroup" EntitySet="StoreGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CheckFace_Employee" Association="Self.FK_CheckFace_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="CheckFace" EntitySet="CheckFaces" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CheckFace_FaceScanMachine" Association="Self.FK_CheckFace_FaceScanMachine">
+            <End Role="FaceScanMachine" EntitySet="FaceScanMachines" />
+            <End Role="CheckFace" EntitySet="CheckFaces" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notifications_CheckFace" Association="Self.FK_Notifications_CheckFace">
+            <End Role="CheckFace" EntitySet="CheckFaces" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_EmployeeGroup" Association="Self.FK_Employee_EmployeeGroup">
+            <End Role="EmployeeGroup" EntitySet="EmployeeGroups" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeFace_Employee" Association="Self.FK_EmployeeFace_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="EmployeeFace" EntitySet="EmployeeFaces" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeInStore_Employee" Association="Self.FK_EmployeeInStore_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="EmployeeInStore" EntitySet="EmployeeInStores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeRoleList_Employee" Association="Self.FK_EmployeeRoleList_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="EmployeeRoleList" EntitySet="EmployeeRoleLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TokenUser_Employee" Association="Self.FK_TokenUser_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="TokenUser" EntitySet="TokenUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkingShift_Employee" Association="Self.FK_WorkingShift_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="WorkingShift" EntitySet="WorkingShifts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeInStore_Store" Association="Self.FK_EmployeeInStore_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="EmployeeInStore" EntitySet="EmployeeInStores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeRoleList_EmployeeRole" Association="Self.FK_EmployeeRoleList_EmployeeRole">
+            <End Role="EmployeeRole" EntitySet="EmployeeRoles" />
+            <End Role="EmployeeRoleList" EntitySet="EmployeeRoleLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreGroupMapping_Store" Association="Self.FK_StoreGroupMapping_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="StoreGroupMapping" EntitySet="StoreGroupMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkingShift_Store" Association="Self.FK_WorkingShift_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="WorkingShift" EntitySet="WorkingShifts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreGroupMapping_StoreGroup" Association="Self.FK_StoreGroupMapping_StoreGroup">
+            <End Role="StoreGroup" EntitySet="StoreGroups" />
+            <End Role="StoreGroupMapping" EntitySet="StoreGroupMappings" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CheckFace_WorkingShift" Association="AEW_DEVModel.FK_CheckFace_WorkingShift">
+            <End Role="WorkingShift" EntitySet="WorkingShifts" />
+            <End Role="CheckFace" EntitySet="CheckFaces" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FaceScanMachine_Store" Association="AEW_DEVModel.FK_FaceScanMachine_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="FaceScanMachine" EntitySet="FaceScanMachines" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(AEW_DEVModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(AEW_DEVModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <Association Name="FK_CheckFace_WorkingShift">
+          <End Type="AEW_DEVModel.WorkingShift" Role="WorkingShift" Multiplicity="0..1" />
+          <End Type="AEW_DEVModel.CheckFace" Role="CheckFace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkingShift">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CheckFace">
+              <PropertyRef Name="WorkShiftId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FaceScanMachine_Store">
+          <End Type="AEW_DEVModel.Store" Role="Store" Multiplicity="1" />
+          <End Type="AEW_DEVModel.FaceScanMachine" Role="FaceScanMachine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FaceScanMachine">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AEW_DEVModelStoreContainer" CdmEntityContainer="AEW_DEVEntities">
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="AEW_DEVModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="AEW_DEVModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="AEW_DEVModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="AEW_DEVModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AttendanceDates">
+            <EntityTypeMapping TypeName="AEW_DEVModel.AttendanceDate">
+              <MappingFragment StoreEntitySet="AttendanceDate">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="DateReport" ColumnName="DateReport" />
+                <ScalarProperty Name="TotalEmployee" ColumnName="TotalEmployee" />
+                <ScalarProperty Name="TotalOnTimeEmployee" ColumnName="TotalOnTimeEmployee" />
+                <ScalarProperty Name="TotalSession" ColumnName="TotalSession" />
+                <ScalarProperty Name="TotalOnTimeSession" ColumnName="TotalOnTimeSession" />
+                <ScalarProperty Name="TotalMissSession" ColumnName="TotalMissSession" />
+                <ScalarProperty Name="TotalMissEmployee" ColumnName="TotalMissEmployee" />
+                <ScalarProperty Name="TotalComeLate" ColumnName="TotalComeLate" />
+                <ScalarProperty Name="TotalComeOnTime" ColumnName="TotalComeOnTime" />
+                <ScalarProperty Name="TotalReturnEarly" ColumnName="TotalReturnEarly" />
+                <ScalarProperty Name="TotalReturnOntime" ColumnName="TotalReturnOntime" />
+                <ScalarProperty Name="TotalWorkingTime" ColumnName="TotalWorkingTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brands">
+            <EntityTypeMapping TypeName="AEW_DEVModel.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="VATCode" ColumnName="VATCode" />
+                <ScalarProperty Name="VATTemplate" ColumnName="VATTemplate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ApiSMSKey" ColumnName="ApiSMSKey" />
+                <ScalarProperty Name="SecurityApiSMSKey" ColumnName="SecurityApiSMSKey" />
+                <ScalarProperty Name="SMSType" ColumnName="SMSType" />
+                <ScalarProperty Name="BrandNameSMS" ColumnName="BrandNameSMS" />
+                <ScalarProperty Name="JsonConfigUrl" ColumnName="JsonConfigUrl" />
+                <ScalarProperty Name="BrandFeatureFilter" ColumnName="BrandFeatureFilter" />
+                <ScalarProperty Name="WiskyId" ColumnName="WiskyId" />
+                <ScalarProperty Name="DefaultDashBoard" ColumnName="DefaultDashBoard" />
+                <ScalarProperty Name="RSAPrivateKey" ColumnName="RSAPrivateKey" />
+                <ScalarProperty Name="RSAPublicKey" ColumnName="RSAPublicKey" />
+                <ScalarProperty Name="PGPPassword" ColumnName="PGPPassword" />
+                <ScalarProperty Name="PGPPrivateKey" ColumnName="PGPPrivateKey" />
+                <ScalarProperty Name="PGPPulblicKey" ColumnName="PGPPulblicKey" />
+                <ScalarProperty Name="DesKey" ColumnName="DesKey" />
+                <ScalarProperty Name="DesVector" ColumnName="DesVector" />
+                <ScalarProperty Name="AccessToken" ColumnName="AccessToken" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="DefaultDomain" ColumnName="DefaultDomain" />
+                <ScalarProperty Name="DefaultImage" ColumnName="DefaultImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CheckFaces">
+            <EntityTypeMapping TypeName="AEW_DEVModel.CheckFace">
+              <MappingFragment StoreEntitySet="CheckFace">
+                <ScalarProperty Name="Statuts" ColumnName="Statuts" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="WorkShiftId" ColumnName="WorkShiftId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FaceScanMachineId" ColumnName="FaceScanMachineId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="IsUpdated" ColumnName="IsUpdated" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="IpWifi" ColumnName="IpWifi" />
+                <ScalarProperty Name="GPS" ColumnName="GPS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="AEW_DEVModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="EmpEnrollNumber" ColumnName="EmpEnrollNumber" />
+                <ScalarProperty Name="MainStoreId" ColumnName="MainStoreId" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DateStartWork" ColumnName="DateStartWork" />
+                <ScalarProperty Name="EmployeeGroupId" ColumnName="EmployeeGroupId" />
+                <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+                <ScalarProperty Name="EmployeeRegency" ColumnName="EmployeeRegency" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="EmployeeSex" ColumnName="EmployeeSex" />
+                <ScalarProperty Name="PersonalCardId" ColumnName="PersonalCardId" />
+                <ScalarProperty Name="DatePersonalCard" ColumnName="DatePersonalCard" />
+                <ScalarProperty Name="PlaceOfPersonalCard" ColumnName="PlaceOfPersonalCard" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MainAddress" ColumnName="MainAddress" />
+                <ScalarProperty Name="EmployeeHometown" ColumnName="EmployeeHometown" />
+                <ScalarProperty Name="EmployeePlaceBorn" ColumnName="EmployeePlaceBorn" />
+                <ScalarProperty Name="DateQuitWork" ColumnName="DateQuitWork" />
+                <ScalarProperty Name="ReasonQuit" ColumnName="ReasonQuit" />
+                <ScalarProperty Name="PersonalIncomTax" ColumnName="PersonalIncomTax" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="SocialInsuranceNumber" ColumnName="SocialInsuranceNumber" />
+                <ScalarProperty Name="BankNumber" ColumnName="BankNumber" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="EducationType" ColumnName="EducationType" />
+                <ScalarProperty Name="EducationStatus" ColumnName="EducationStatus" />
+                <ScalarProperty Name="EducationQualify" ColumnName="EducationQualify" />
+                <ScalarProperty Name="Specialized" ColumnName="Specialized" />
+                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+                <ScalarProperty Name="CourseYear" ColumnName="CourseYear" />
+                <ScalarProperty Name="FormOfTraining" ColumnName="FormOfTraining" />
+                <ScalarProperty Name="ContactOne" ColumnName="ContactOne" />
+                <ScalarProperty Name="ContactTwo" ColumnName="ContactTwo" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeFaces">
+            <EntityTypeMapping TypeName="AEW_DEVModel.EmployeeFace">
+              <MappingFragment StoreEntitySet="EmployeeFace">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="EmpEnrollNumber" ColumnName="EmpEnrollNumber" />
+                <ScalarProperty Name="FaceIndex" ColumnName="FaceIndex" />
+                <ScalarProperty Name="FaceData" ColumnName="FaceData" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="NameEmployeeInMachine" ColumnName="NameEmployeeInMachine" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeGroups">
+            <EntityTypeMapping TypeName="AEW_DEVModel.EmployeeGroup">
+              <MappingFragment StoreEntitySet="EmployeeGroup">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodeGroup" ColumnName="CodeGroup" />
+                <ScalarProperty Name="NameGroup" ColumnName="NameGroup" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ExpandTime" ColumnName="ExpandTime" />
+                <ScalarProperty Name="GroupPolicy" ColumnName="GroupPolicy" />
+                <ScalarProperty Name="GroupSecurity" ColumnName="GroupSecurity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeInStores">
+            <EntityTypeMapping TypeName="AEW_DEVModel.EmployeeInStore">
+              <MappingFragment StoreEntitySet="EmployeeInStore">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="AssignedDate" ColumnName="AssignedDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeRoles">
+            <EntityTypeMapping TypeName="AEW_DEVModel.EmployeeRole">
+              <MappingFragment StoreEntitySet="EmployeeRole">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Lever" ColumnName="Lever" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeRoleLists">
+            <EntityTypeMapping TypeName="AEW_DEVModel.EmployeeRoleList">
+              <MappingFragment StoreEntitySet="EmployeeRoleList">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="EmpRoleId" ColumnName="EmpRoleId" />
+                <ScalarProperty Name="BeginDay" ColumnName="BeginDay" />
+                <ScalarProperty Name="FinishDay" ColumnName="FinishDay" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FaceScanMachines">
+            <EntityTypeMapping TypeName="AEW_DEVModel.FaceScanMachine">
+              <MappingFragment StoreEntitySet="FaceScanMachine">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="BrandOfMachine" ColumnName="BrandOfMachine" />
+                <ScalarProperty Name="DateOfManufacture" ColumnName="DateOfManufacture" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notifications">
+            <EntityTypeMapping TypeName="AEW_DEVModel.Notification">
+              <MappingFragment StoreEntitySet="Notifications">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="Opening" ColumnName="Opening" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="CheckFaceId" ColumnName="CheckFaceId" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="AEW_DEVModel.Store">
+              <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+                <ScalarProperty Name="isAvailable" ColumnName="isAvailable" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="RoomRentMode" ColumnName="RoomRentMode" />
+                <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+                <ScalarProperty Name="CloseTime" ColumnName="CloseTime" />
+                <ScalarProperty Name="DefaultAdminPassword" ColumnName="DefaultAdminPassword" />
+                <ScalarProperty Name="HasProducts" ColumnName="HasProducts" />
+                <ScalarProperty Name="HasNews" ColumnName="HasNews" />
+                <ScalarProperty Name="HasImageCollections" ColumnName="HasImageCollections" />
+                <ScalarProperty Name="HasMultipleLanguage" ColumnName="HasMultipleLanguage" />
+                <ScalarProperty Name="HasWebPages" ColumnName="HasWebPages" />
+                <ScalarProperty Name="HasCustomerFeedbacks" ColumnName="HasCustomerFeedbacks" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="HasOrder" ColumnName="HasOrder" />
+                <ScalarProperty Name="HasBlogEditCollections" ColumnName="HasBlogEditCollections" />
+                <ScalarProperty Name="LogoUrl" ColumnName="LogoUrl" />
+                <ScalarProperty Name="FbAccessToken" ColumnName="FbAccessToken" />
+                <ScalarProperty Name="StoreFeatureFilter" ColumnName="StoreFeatureFilter" />
+                <ScalarProperty Name="RunReport" ColumnName="RunReport" />
+                <ScalarProperty Name="AttendanceStoreFilter" ColumnName="AttendanceStoreFilter" />
+                <ScalarProperty Name="StoreCode" ColumnName="StoreCode" />
+                <ScalarProperty Name="PosId" ColumnName="PosId" />
+                <ScalarProperty Name="StoreConfig" ColumnName="StoreConfig" />
+                <ScalarProperty Name="DefaultDashBoard" ColumnName="DefaultDashBoard" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="PaymentTypeApply" ColumnName="PaymentTypeApply" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreGroups">
+            <EntityTypeMapping TypeName="AEW_DEVModel.StoreGroup">
+              <MappingFragment StoreEntitySet="StoreGroup">
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreGroupMappings">
+            <EntityTypeMapping TypeName="AEW_DEVModel.StoreGroupMapping">
+              <MappingFragment StoreEntitySet="StoreGroupMapping">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StoreGroupID" ColumnName="StoreGroupID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="AEW_DEVModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TokenUsers">
+            <EntityTypeMapping TypeName="AEW_DEVModel.TokenUser">
+              <MappingFragment StoreEntitySet="TokenUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="FcmToken" ColumnName="FcmToken" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="JwtToken" ColumnName="JwtToken" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkingShifts">
+            <EntityTypeMapping TypeName="AEW_DEVModel.WorkingShift">
+              <MappingFragment StoreEntitySet="WorkingShift">
+                <ScalarProperty Name="ModeAttendance" ColumnName="ModeAttendance" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CheckMin" ColumnName="CheckMin" />
+                <ScalarProperty Name="CheckMax" ColumnName="CheckMax" />
+                <ScalarProperty Name="TotalWorkTime" ColumnName="TotalWorkTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ShiftStart" ColumnName="ShiftStart" />
+                <ScalarProperty Name="ShiftEnd" ColumnName="ShiftEnd" />
+                <ScalarProperty Name="CheckInTime" ColumnName="CheckInTime" />
+                <ScalarProperty Name="UpdatePerson" ColumnName="UpdatePerson" />
+                <ScalarProperty Name="ProcessingStatus" ColumnName="ProcessingStatus" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="TimeFramId" ColumnName="TimeFramId" />
+                <ScalarProperty Name="BreakTime" ColumnName="BreakTime" />
+                <ScalarProperty Name="RequestedCheckOut" ColumnName="RequestedCheckOut" />
+                <ScalarProperty Name="RequestedCheckIn" ColumnName="RequestedCheckIn" />
+                <ScalarProperty Name="IsRequested" ColumnName="IsRequested" />
+                <ScalarProperty Name="ApprovePerson" ColumnName="ApprovePerson" />
+                <ScalarProperty Name="NoteRequest" ColumnName="NoteRequest" />
+                <ScalarProperty Name="LastCheckBeforeShift" ColumnName="LastCheckBeforeShift" />
+                <ScalarProperty Name="FirstCheckAfterShift" ColumnName="FirstCheckAfterShift" />
+                <ScalarProperty Name="IsOverTime" ColumnName="IsOverTime" />
+                <ScalarProperty Name="InMode" ColumnName="InMode" />
+                <ScalarProperty Name="OutMode" ColumnName="OutMode" />
+                <ScalarProperty Name="BreakCount" ColumnName="BreakCount" />
+                <ScalarProperty Name="CheckInExpandTime" ColumnName="CheckInExpandTime" />
+                <ScalarProperty Name="CheckOutExpandTime" ColumnName="CheckOutExpandTime" />
+                <ScalarProperty Name="ComeLateExpandTime" ColumnName="ComeLateExpandTime" />
+                <ScalarProperty Name="LeaveEarlyExpandTime" ColumnName="LeaveEarlyExpandTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="AEW_DEVModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="AEW_DEVModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="AEW_DEVModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="AEW_DEVModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="AEW_DEVModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="AEW_DEVModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AEW_DEVModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="AEW_DEVModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AEW_DEVModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="AEW_DEVModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="AEW_DEVModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

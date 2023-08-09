@@ -1,0 +1,126 @@
+﻿@model IEnumerable<Admin_Page.CheckFace>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Request Management</h2>
+@using (Html.BeginForm("Index", "Requests", FormMethod.Get, new { @class = "dataTables_length d-flex" }))
+{
+    @Html.DropDownList("Stores", (IEnumerable<SelectListItem>)ViewBag.CategoryList, "Select store", new { @class = "custom-select custom-select-sm form-control form-control-sm", required = "required" })
+    <select id="Status" name="Status" class="custom-select custom-select-sm form-control form-control-sm">
+        <option value="1">New</option>
+        <option value="2">Approved</option>
+        <option value="3">Rejected</option>
+    </select>
+    <input type="submit" value="Search">
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateTime)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Mode)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.StoreId)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.IsUpdated)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.IpWifi)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.GPS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Statuts)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Employee.Name)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.FaceScanMachine.MachineCode)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.WorkingShift.UpdatePerson)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateTime)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.Mode)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.StoreId)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.IsUpdated)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.IpWifi)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.GPS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.Statuts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.Name)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.FaceScanMachine.MachineCode)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.WorkingShift.UpdatePerson)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                @if (item.Statuts == 1)
+                {
+                    <input type="button" value="Aprove" class="btn btn-success" onclick="location.href='@Url.Action("Edit", "Requests", new { ID = item.Id, Status = 2 })'" />
+                    <input type="button" value="Reject" class="btn btn-danger" onclick="location.href='@Url.Action("Edit", "Requests", new { ID = item.Id, Status = 3 })'" />
+                }
+                else if (item.Statuts == 2)
+                {
+                    <input type="button" value="Aproved" class="btn btn-success" />
+                }
+                else
+                {
+                    <input type="button" value="Rejected" class="btn btn-danger" />
+                }
+            </td>
+        </tr>
+    }
+
+</table>

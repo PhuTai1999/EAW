@@ -1,0 +1,331 @@
+﻿@model Admin_Page.Store
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Store</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isAvailable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomRentMode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomRentMode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CloseTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CloseTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DefaultAdminPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefaultAdminPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasProducts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasProducts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasNews)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasNews)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasImageCollections)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasImageCollections)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasMultipleLanguage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasMultipleLanguage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasWebPages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasWebPages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasCustomerFeedbacks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasCustomerFeedbacks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasBlogEditCollections)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasBlogEditCollections)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogoUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogoUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FbAccessToken)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FbAccessToken)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StoreFeatureFilter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoreFeatureFilter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RunReport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RunReport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AttendanceStoreFilter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AttendanceStoreFilter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StoreCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoreCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PosId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PosId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StoreConfig)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoreConfig)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DefaultDashBoard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefaultDashBoard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.District)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentTypeApply)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentTypeApply)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand.BrandName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand.BrandName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
