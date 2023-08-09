@@ -1,0 +1,280 @@
+﻿@model IEnumerable<Admin_Page.Employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Employees Management</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
+    @using (Html.BeginForm("Index", "Employees", FormMethod.Get, new { @class = "dataTables_length d-flex" }))
+    {
+        @Html.DropDownList("Stores", (IEnumerable<SelectListItem>)ViewBag.CategoryList, "Select store", new { @onchange = "this.form.submit();", @class = "custom-select custom-select-sm form-control form-control-sm" })
+    }
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.EmpEnrollNumber)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.MainStoreId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.BrandId)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.DateStartWork)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.EmployeeCode)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.EmployeeRegency)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.EmployeeSex)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.PersonalCardId)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.DatePersonalCard)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.PlaceOfPersonalCard)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.MainAddress)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.EmployeeHometown)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.EmployeePlaceBorn)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.DateQuitWork)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.ReasonQuit)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.PersonalIncomTax)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.MaritalStatus)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.SocialInsuranceNumber)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.BankNumber)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Bank)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.EducationType)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.EducationStatus)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.EducationQualify)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Specialized)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.SchoolName)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.CourseYear)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.FormOfTraining)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.ContactOne)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.ContactTwo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.EmployeeGroup.CodeGroup)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.EmpEnrollNumber)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.MainStoreId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.Active)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.BrandId)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.DateStartWork)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.EmployeeCode)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.EmployeeRegency)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.EmployeeSex)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.PersonalCardId)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.DatePersonalCard)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.PlaceOfPersonalCard)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.MainAddress)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.EmployeeHometown)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.EmployeePlaceBorn)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.DateQuitWork)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.ReasonQuit)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.PersonalIncomTax)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.MaritalStatus)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.SocialInsuranceNumber)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.BankNumber)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.Bank)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.EducationType)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.EducationStatus)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.EducationQualify)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.Specialized)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.SchoolName)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.CourseYear)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.FormOfTraining)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.ContactOne)
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.ContactTwo)
+        </td>
+        <td>
+            <img src="data:image/png;base64,@Html.DisplayFor(modelItem => item.Image)" />
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.EmployeeGroup.CodeGroup)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) 
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,262 @@
+﻿@model IEnumerable<Admin_Page.Store>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Store Management</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Lat)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Lon)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.isAvailable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Fax)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.RoomRentMode)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.ReportDate)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.ShortName)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.GroupId)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.OpenTime)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.CloseTime)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.DefaultAdminPassword)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.HasProducts)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.HasNews)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.HasImageCollections)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.HasMultipleLanguage)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.HasWebPages)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.HasCustomerFeedbacks)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.HasOrder)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.HasBlogEditCollections)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.LogoUrl)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.FbAccessToken)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.StoreFeatureFilter)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.RunReport)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.AttendanceStoreFilter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StoreCode)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.PosId)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.StoreConfig)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.DefaultDashBoard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.District)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Province)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.PaymentTypeApply)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand.BrandName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Address)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.Lat)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.Lon)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.isAvailable)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Phone)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.Fax)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.CreateDate)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.Type)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.RoomRentMode)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.ReportDate)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.ShortName)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.GroupId)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.OpenTime)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.CloseTime)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.DefaultAdminPassword)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.HasProducts)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.HasNews)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.HasImageCollections)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.HasMultipleLanguage)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.HasWebPages)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.HasCustomerFeedbacks)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.HasOrder)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.HasBlogEditCollections)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.LogoUrl)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.FbAccessToken)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.StoreFeatureFilter)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.RunReport)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.AttendanceStoreFilter)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StoreCode)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.PosId)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.StoreConfig)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.DefaultDashBoard)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.District)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Province)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.Active)
+    </td>
+    <td hidden>
+        @Html.DisplayFor(modelItem => item.PaymentTypeApply)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Brand.BrandName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) 
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) 
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
+}
+
+</table>

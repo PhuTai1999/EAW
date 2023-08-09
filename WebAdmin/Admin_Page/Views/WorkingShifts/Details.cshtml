@@ -1,0 +1,259 @@
+﻿@model Admin_Page.WorkingShift
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WorkingShift</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckMin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckMin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckMax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckMax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalWorkTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalWorkTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShiftStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShiftStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShiftEnd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShiftEnd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckInTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckInTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatePerson)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatePerson)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcessingStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProcessingStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeFramId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeFramId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BreakTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BreakTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestedCheckOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestedCheckOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestedCheckIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestedCheckIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsRequested)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsRequested)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovePerson)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovePerson)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoteRequest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoteRequest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastCheckBeforeShift)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastCheckBeforeShift)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstCheckAfterShift)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstCheckAfterShift)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsOverTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsOverTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InMode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InMode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutMode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutMode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BreakCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BreakCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckInExpandTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckInExpandTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckOutExpandTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckOutExpandTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComeLateExpandTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComeLateExpandTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveEarlyExpandTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveEarlyExpandTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Store.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Store.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

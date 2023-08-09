@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="74614da069604abe95a8e4575318a352" Name="Diagram1">
+        <EntityTypeShape EntityType="AEW_DEVModel.AspNetRole" Width="1.5" PointX="8.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.AspNetUserClaim" Width="1.5" PointX="13.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.AspNetUserLogin" Width="1.5" PointX="13.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.AspNetUser" Width="1.5" PointX="11" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.AttendanceDate" Width="1.5" PointX="8.25" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.Brand" Width="1.5" PointX="3.75" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.CheckFace" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.Employee" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.EmployeeFace" Width="1.5" PointX="5.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.EmployeeGroup" Width="1.5" PointX="0.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.EmployeeInStore" Width="1.5" PointX="8.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.EmployeeRole" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.EmployeeRoleList" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.FaceScanMachine" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.Notification" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.Store" Width="1.5" PointX="6" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.StoreGroup" Width="1.5" PointX="6" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.StoreGroupMapping" Width="1.5" PointX="8.25" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.TokenUser" Width="1.5" PointX="5.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.WorkingShift" Width="1.5" PointX="11.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="AEW_DEVModel.database_firewall_rules" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="AEW_DEVModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_AttendanceDate_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_Store_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_StoreGroup_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_CheckFace_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_CheckFace_FaceScanMachine" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_Notifications_CheckFace" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_Employee_EmployeeGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_EmployeeFace_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_EmployeeInStore_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_EmployeeRoleList_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_TokenUser_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_WorkingShift_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_EmployeeInStore_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_EmployeeRoleList_EmployeeRole" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_StoreGroupMapping_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_WorkingShift_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_StoreGroupMapping_StoreGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.AspNetUserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="AEW_DEVModel.FK_CheckFace_WorkingShift" />
+        <AssociationConnector Association="AEW_DEVModel.FK_FaceScanMachine_Store" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
